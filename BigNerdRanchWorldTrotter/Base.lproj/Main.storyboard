@@ -95,7 +95,26 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1756" y="834"/>
+            <point key="canvasLocation" x="162" y="780"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="MdI-0b-Xna">
+            <objects>
+                <viewController id="ITr-Ho-VS1" customClass="WebViewController" customModule="BigNerdRanchWorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <wkWebView key="view" contentMode="scaleToFill" customUserAgent="" id="ebR-MY-83V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
+                    <tabBarItem key="tabBarItem" title="Web" id="QlS-1I-pHR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9l-Pi-12A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="779"/>
         </scene>
         <!--Map-->
         <scene sceneID="EIH-9J-0Ko">
@@ -105,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKo-Qw-Z9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="36.431784107946029"/>
+            <point key="canvasLocation" x="812" y="882"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8fC-Dy-Ehg">
@@ -120,6 +139,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="caq-b2-HVO"/>
                         <segue destination="nG3-n0-O9F" kind="relationship" relationship="viewControllers" id="clw-Iy-RQM"/>
+                        <segue destination="ITr-Ho-VS1" kind="relationship" relationship="viewControllers" id="zYQ-PA-lrC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEK-CI-YAT" userLabel="First Responder" sceneMemberID="firstResponder"/>

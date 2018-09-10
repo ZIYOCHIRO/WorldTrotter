@@ -15,6 +15,7 @@
 		0D76748F21397AD800BFF015 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76748E21397AD800BFF015 /* ConversionViewController.swift */; };
 		0D897682213A8EE600ABCF9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D897681213A8EE600ABCF9A /* MapKit.framework */; };
 		0D897684213ABBE900ABCF9A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D897683213ABBE900ABCF9A /* MapViewController.swift */; };
+		0D97541E21466642007FC1C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97541D21466642007FC1C8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		0D76748E21397AD800BFF015 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		0D897681213A8EE600ABCF9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0D897683213ABBE900ABCF9A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0D97541D21466642007FC1C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +69,10 @@
 			children = (
 				0D6B6B9B213CCFE100272C41 /* Localizable.strings */,
 				0D76747B2139399200BFF015 /* AppDelegate.swift */,
-				0D76747F2139399200BFF015 /* Main.storyboard */,
 				0D76748E21397AD800BFF015 /* ConversionViewController.swift */,
 				0D897683213ABBE900ABCF9A /* MapViewController.swift */,
+				0D97541D21466642007FC1C8 /* WebViewController.swift */,
+				0D76747F2139399200BFF015 /* Main.storyboard */,
 				0D76748D213939A500BFF015 /* Supporting Files */,
 				0D7674872139399300BFF015 /* Info.plist */,
 			);
@@ -169,6 +172,7 @@
 				0D76748F21397AD800BFF015 /* ConversionViewController.swift in Sources */,
 				0D897684213ABBE900ABCF9A /* MapViewController.swift in Sources */,
 				0D76747C2139399200BFF015 /* AppDelegate.swift in Sources */,
+				0D97541E21466642007FC1C8 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

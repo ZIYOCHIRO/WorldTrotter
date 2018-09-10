@@ -61,11 +61,14 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
         let decimalSeparator = currentLocal.decimalSeparator
         let exitingTextHasDecimalSeparator = textField.text?.contains(decimalSeparator!)
         let replacementTextHasDecimalSeparator = string.contains(decimalSeparator!)
+        let replacementTextHasLetter = string.rangeOfCharacter(from: CharacterSet.letters)
+        if replacementTextHasLetter != nil {
+            return false
+        }
         if exitingTextHasDecimalSeparator! && replacementTextHasDecimalSeparator {
             return false
-        } else {
-            return true
         }
+        return true
     }
     
     // triggered by tap background view

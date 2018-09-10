@@ -8,9 +8,11 @@
 
 import UIKit
 class ConversionViewController: UIViewController, UITextFieldDelegate{
+    // MARK: Outlets
     @IBOutlet weak var celsuisLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    // MARK: Properties
     var fahrenHeitValues: Double? {
         didSet {
             updateCelsuisLabel()
@@ -23,14 +25,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
             return nil
         }
     }
-    // MARK: Life cycle
-    override func viewDidLoad() {
-        // Always call the super implentation of viewDidLoad
-        super.viewDidLoad()
-        
-        print("ConversionViewController load its view!")
-    }
-    
     // only one digit in celsuisLabel,
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
@@ -39,6 +33,30 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
         nf.maximumFractionDigits = 1
         return nf
     }()
+    
+    // MARK: Life cycle
+    
+    // MARK: Silver Challenge: Dark Mode
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        if hour < 6 || hour > 18 {
+            view.backgroundColor = UIColor.gray
+        } else {
+            view.backgroundColor = UIColor.white
+        }
+        
+    }
+    override func viewDidLoad() {
+        // Always call the super implentation of viewDidLoad
+        super.viewDidLoad()
+        
+        print("ConversionViewController load its view!")
+    }
+    
+    
     
     func updateCelsuisLabel(){
         if let celsuisvalue = celsuisValue {
@@ -61,6 +79,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
         let decimalSeparator = currentLocal.decimalSeparator
         let exitingTextHasDecimalSeparator = textField.text?.contains(decimalSeparator!)
         let replacementTextHasDecimalSeparator = string.contains(decimalSeparator!)
+        // MARK: Bronze Challenge: Display Alphabetic Characters
         let replacementTextHasLetter = string.rangeOfCharacter(from: CharacterSet.letters)
         if replacementTextHasLetter != nil {
             return false

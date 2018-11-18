@@ -101,15 +101,6 @@
         <scene sceneID="MdI-0b-Xna">
             <objects>
                 <viewController id="ITr-Ho-VS1" customClass="WebViewController" customModule="BigNerdRanchWorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <wkWebView key="view" contentMode="scaleToFill" customUserAgent="" id="ebR-MY-83V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <wkWebViewConfiguration key="configuration">
-                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                            <wkPreferences key="preferences"/>
-                        </wkWebViewConfiguration>
-                    </wkWebView>
                     <tabBarItem key="tabBarItem" title="Web" id="QlS-1I-pHR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9l-Pi-12A" userLabel="First Responder" sceneMemberID="firstResponder"/>

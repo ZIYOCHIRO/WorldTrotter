@@ -8,54 +8,95 @@
 
 import UIKit
 import MapKit
-class MapViewController: UIViewController {
-    // MARk： Properties
-    var mapView: MKMapView!
+
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    // MARK: Life cycle
+    var mapView: MKMapView!
+    var locationManager: CLLocationManager?
+    
     override func loadView() {
-        // creat a map view
+        // Create a map view
         mapView = MKMapView()
+        mapView.delegate = self
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
         
-        // set it as *the* View of this viewController
+        // Set it as *the* view of this view controller
         view = mapView
         
-        // creat a segmentedControl View
-        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
-        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
-        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
-        let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
-        
+        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
-        // .valueChanged
-        segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(segControl:)) , for:UIControl.Event.valueChanged)
+        
+        segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(_:)), for: .valueChanged)
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
-        // add constraints to segmentedControl
-        let safeArea = view.safeAreaLayoutGuide
-        let topConstraint = segmentedControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20)
-        let margins = view.layoutMarginsGuide
-        let leadingContraints = segmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
-        let trailingContraints = segmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
-        // active constraints
-        topConstraint.isActive = true
-        leadingContraints.isActive = true
-        trailingContraints.isActive = true
         
+        let topConstraint = segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        
+        let margins = view.layoutMarginsGuide
+        let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        
+        topConstraint.isActive = true
+        leadingConstraint.isActive = true
+        trailingConstraint.isActive = true
+        
+        initLocalizationButton(segmentedControl)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("MapViewController load its view!")
+        print("MapViewController loaded its view.")
     }
-    @objc func mapTypeChanged(segControl: UISegmentedControl) {
+    
+    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
-        case 0: mapView.mapType = .standard
-        case 1: mapView.mapType = .hybrid
-        case 2: mapView.mapType = .satellite
-        default: break
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:
+            break
         }
+    }
+    
+    func initLocalizationButton(_ anyView: UIView!){
+        let localizationButton = UIButton.init(type: .system)
+        localizationButton.setTitle("Localization", for: .normal)
+        localizationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(localizationButton)
+        
+        //Constraints
+        let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView
+            .topAnchor, constant: 32 )
+        let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        let trailingConstraint = localizationButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        
+        topConstraint.isActive = true
+        leadingConstraint.isActive = true
+        trailingConstraint.isActive = true
+        
+        localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
+    }
+    
+    @objc func showLocalization(sender: UIButton!){
+        locationManager!.requestWhenInUseAuthorization()//se agrega permiso en info.plist
+        mapView.showsUserLocation = true //fire up the method mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
+        mapView.userTrackingMode = .follow
+    }
+    
+    //    func showLocalization(sender: UIButton!) {
+    //        locationManager?.requestWhenInUseAuthorization()
+    //        self.mapView(mapView, didUpdate: location)
+    //    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        //This is a method from MKMapViewDelegate, fires up when the user`s location changes
+        let zoomedInCurrentLocation = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(zoomedInCurrentLocation, animated: true)
     }
 }

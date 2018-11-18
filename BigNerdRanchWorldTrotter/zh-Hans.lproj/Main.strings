@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "87N-IF-FXU"; */
+"87N-IF-FXU.text" = "华式温度";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "Pj0-VC-wIw"; */
+"Pj0-VC-wIw.text" = "100";
+
+/* Class = "UITabBarItem"; title = "Web"; ObjectID = "QlS-1I-pHR"; */
+"QlS-1I-pHR.title" = "网站";
+
+/* Class = "UITextField"; text = "value"; ObjectID = "T2f-Lg-iYT"; */
+"T2f-Lg-iYT.text" = "值";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "aFP-Zw-oTB"; */
+"aFP-Zw-oTB.title" = "地图";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "pNR-yw-TFN"; */
+"pNR-yw-TFN.title" = "转换";
+
+/* Class = "UILabel"; text = "degree Celsuis"; ObjectID = "z3d-Pb-9c0"; */
+"z3d-Pb-9c0.text" = "摄氏度";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "zXZ-7c-gzz"; */
+"zXZ-7c-gzz.text" = "实际上是";

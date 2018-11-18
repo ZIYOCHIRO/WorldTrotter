@@ -33,6 +33,9 @@
 		0D897681213A8EE600ABCF9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0D897683213ABBE900ABCF9A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D97541D21466642007FC1C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0DFA6DEF21A154C800EC85E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0DFA6DF021A154C800EC85E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0DFA6DF121A154C800EC85E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,7 @@
 				en,
 				Base,
 				es,
+				"zh-Hans",
 			);
 			mainGroup = 0D76746F2139399200BFF015;
 			productRefGroup = 0D7674792139399200BFF015 /* Products */;
@@ -184,6 +188,7 @@
 			children = (
 				0D6B6B9A213CCFE100272C41 /* en */,
 				0D6B6B9C213CCFEE00272C41 /* es */,
+				0DFA6DF121A154C800EC85E9 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				0D7674802139399200BFF015 /* Base */,
 				0D248CA7213C1C6200CD6AF0 /* en */,
 				0D248CA8213C1E5B00CD6AF0 /* es */,
+				0DFA6DEF21A154C800EC85E9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D7674852139399300BFF015 /* Base */,
+				0DFA6DF021A154C800EC85E9 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
